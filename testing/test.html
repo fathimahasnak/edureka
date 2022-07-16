@@ -1,0 +1,404 @@
+<html>
+    <head>
+        <title>Netflix Movies</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="demohome.css"/>
+        <script src="demohome.js"></script>
+        <style>
+            body{
+                background-color: #1b1a19;
+                color:rgb(167, 161, 161)
+            }
+            .mydark{
+                background-color: #b6ab97;
+                color:rgb(238, 221, 190)
+            }
+        </style>
+        <script>
+            function changeMode(){
+                let mybody = document.body;
+                mybody.classList.toggle('mydark')
+            }
+        </script>
+    </head>
+    <body>
+        
+        <div>
+            <div id="coupon">
+                <button id="couponclose" onClick="closeCoupon()">&times;</button>
+                <img src="images/netflixcoupon.jpg" alt="netflix coupon"/>
+            </div>
+        </div>
+        <script>
+            window.onload = loadCoupon()
+        </script>
+
+
+        <div id="header">
+            <nav class="navbar navbar-light">
+                <div class="navbar-fluid">
+                    <div class="navbar-header navbar-light">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#edunav">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="images/Logonetflix.png" alt="netflix logo" class="slogo"/>
+                    </a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="edunav">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="">Home</a>
+                            </li>
+                            <li>
+                                <a href="">TV Shows</a>
+                            </li>
+                            <li>
+                                <a href="">Movies</a>
+                            </li>
+                            <li>
+                                <a href="">New & Popular</a>
+                            </li>
+                            <li>
+                                <a href="">My List</a>
+                            </li>
+                           
+                        </ul>
+
+                        
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="">
+                                        <span class="glyphicon glyphicon-user"> Register</span>
+                                    </a>
+                                </li>
+                                <li><a href="">
+                                        <span class="glyphicon glyphicon-log-in"> Login</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <p id="out">
+                                    <div id="icon">
+                                        <!-- <img src='https://openweathermap.org/img/w/01d.png'/> -->
+                                        <a href="javascript:alert(x);">
+                                            <span class="glyphicon glyphicon-cloud" id="wetherglyph"></span>
+                                        </a>
+                                    </div>
+                                    </p>
+                                    <script>
+                                        let x = document.getElementById('out');
+                                        function geolocation(){
+                                            if(navigator.geolocation){
+                                                navigator.geolocation.getCurrentPosition(showPosition)
+                                            }else{
+                                                x="Geo Not Supported"
+                                            }
+                                        }
+                            
+                                        function showPosition(data){
+                                            console.log(data)
+                                            // x.innerText=`Latitude is ${data.coords.latitude} & Longitude is ${data.coords.longitude}`
+                                            let latitude = data.coords.latitude;
+                                            let longitude = data.coords.longitude;
+                                            const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&mode=json&units=metric&cnt=1&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+                            
+                                            /// api Calling 
+                                            fetch(url,{method:'GET'})
+                                            // return promise
+                                            .then((res) => res.json())
+                                            // return data
+                                            .then((data) => {
+                                                let cityName = data.city.name
+                                                let weather = data.list[0].temp.day
+                                                x.innerText = `Weather of ${cityName} is ${weather} °C`
+                                                // document.getElementById('icon').appendChild(
+                                                //      <img src='https://openweathermap.org/img/w/'+data.list[0].weather.icon+'.png'/>
+                                                // )
+                                            })
+                                        }
+                                    </script>
+                                    <script>    
+                                        window.onload = geolocation()
+                                    </script>
+                                </li>
+                                <li>
+                                    <button id="modebtn" onClick="changeMode()"> Mode</button> 
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>    
+            </nav>
+            </div>
+
+            <div class="container-fluid" id="maincontainer">
+                <div class="container-fluid" id="subcont1">
+                    <br><br>
+                    <a href="">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </a>
+                    <br><br><br><br>
+                    <a href="">
+                    <i class="glyphicon glyphicon-home"></i>
+                    </a>
+                    <br><br><br><br>
+                    <a href="">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                    </a>
+                    <br><br><br><br>
+                    <a href="">
+                    <i class="glyphicon glyphicon-film"></i>
+                    </a>
+                    <br><br><br><br>    
+                    <a href="">
+                    <i class="glyphicon glyphicon-plus-sign"></i>
+                    </a>
+                </div>
+                <div class="container-fluid" id="subcont11">
+                <div id="subcont2">
+                     <div id="eduSlider" class="carousel slide" data-ride="carousel"> 
+                        <ol class="carousel-indicators">
+                            <li data-target="#eduSlider" data-slide-to="0" class="active"></li>
+                            <li data-target="#eduSlider" data-slide-to="1"></li>
+                            <li data-target="#eduSlider" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item slideImg active">
+                                <img src="images/disclosure.png" alt="imgslider" class="slideImgContent" />    
+                            </div>
+                            <div class="item slideImg">
+                                <img src="images/thepunisher.jpg" alt="imgslider" class="slideImgContent" />
+                            </div>
+                            <div class="item slideImg">
+                                <img src="images/calibre.png" alt="imgslider" class="slideImgContent" />
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#eduSlider" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#eduSlider" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div  id="subcont3">
+                    <div class="subsection">
+                        <div class="subsecheading">
+                            <h4>Continue Watching</h4>
+                        </div>
+                        <div class="subsectcont">
+                            <div class="moviedetails">
+                                <div class="moviethumbprog">
+                                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5C98AA21FD7B0644BDB26F37C4F78FB056DA9876FE4C1239287EA899E4D91531/scale?width=1200&aspectRatio=1.78&format=jpeg">
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:70%">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movietitle">
+                                    <span>Encanto</span>
+                                </div>
+                            </div>
+                            <div class="moviedetails">
+                                <div class="moviethumbprog">
+                                    <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/1607/1161607-h-a429a3428191">
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:90%">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movietitle">
+                                    <span>Saving Red</span>
+                                </div>
+                            </div>
+                            <div class="moviedetails">
+                                <div class="moviethumbprog">
+                                    <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/8722/1078722-h-82919d0d3c64">
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:40%">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movietitle">
+                                    <span>Shang Chi</span>
+                                </div>
+                            </div>
+                            <div class="moviedetails">
+                                <div class="moviethumbprog">
+                                    <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/4772/674772-h">
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width:40%">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="movietitle">
+                                    <span>Thor</span>
+                                </div>
+                            </div>
+                            <div class="container" id="more">
+                                <a href="">
+                                    <i class="glyphicon glyphicon-plus-sign" style="margin-top:50px"></i>
+                                </a>
+                                <br>
+                                <label>More</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subsection">
+                        <div class="subsecheading">
+                            <h4>Popular on Nelflix</h4>
+                        </div>
+                        <div class="subsectcont">
+                            <div class="moviedetails">
+                                <div class="moviethumb">
+                                    <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/87/1100087-h-70e9725e4a9b">
+                                </div>
+                                <div class="movietitle">
+                                    <span>Eternals</span>
+                                </div>
+                            </div>
+                            <div class="moviedetails">
+                                <div class="moviethumb">
+                                    <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/4652/674652-h">
+                                </div>
+                                <div class="movietitle">
+                                    <span>Avengers: Infinity War</span>
+                                </div>
+                            </div>
+                            <div class="moviedetails">
+                                <div class="moviethumb">
+                                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5C98AA21FD7B0644BDB26F37C4F78FB056DA9876FE4C1239287EA899E4D91531/scale?width=1200&aspectRatio=1.78&format=jpeg">
+                                </div>
+                                <div class="movietitle">
+                                    <span>Encanto</span>
+                                </div>
+                            </div>
+                            <div class="moviedetails">
+                                <div class="moviethumb">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzssYLbXSKnPABZkCbTsfTWTGxMHXXrMzdow&usqp=CAU">
+                                </div>
+                                <div class="movietitle">
+                                    <span>Dune</span>
+                                </div>
+                            </div>
+                            <div class="container" id="more">
+                                <a href="">
+                                    <i class="glyphicon glyphicon-plus-sign" style="margin-top:50px"></i>
+                                </a>
+                                <br>
+                                <label>More</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subsection">
+                        <div class="subsecheading">
+                            <h4>Watch it Again</h4>
+                        </div>
+                        <div class="subsectcont">
+                            <div class="moviedetails">
+                                <div class="moviethumb">
+                                    <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/4563/674563-h">
+                                </div>
+                                <div class="movietitle">
+                                    <span>Moana</span>
+                                </div>
+                            </div>
+                            <div class="moviedetails">
+                                <div class="moviethumb">
+                                    <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/6652/846652-h">
+                                </div>
+                                <div class="movietitle">
+                                    <span>Mulan</span>
+                                </div>
+                            </div>
+                            <div class="moviedetails">
+                                <div class="moviethumb">
+                                    <img src="https://p4.wallpaperbetter.com/wallpaper/274/33/283/stranger-things-netflix-wallpaper-preview.jpg">
+                                </div>
+                                <div class="movietitle">
+                                    <span>Stranger Things</span>
+                                </div>
+                            </div>
+                            <div class="moviedetails">
+                                <div class="moviethumb">
+                                    <img src="https://d2kektcjb0ajja.cloudfront.net/images/posts/feature_images/000/000/072/large-1466557422-feature.jpg?1466557422">
+                                </div>
+                                <div class="movietitle">
+                                    <span>Oblivion</span>
+                                </div>
+                            </div>
+                            <div class="container" id="more">
+                                <a href="">
+                                    <i class="glyphicon glyphicon-plus-sign" style="margin-top:50px"></i>
+                                </a>
+                                <br>
+                                <label>More</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="subsection"> -->
+                        
+                    <!-- </div> -->
+                    <!-- <div class="subsection"> -->
+                        
+                    <!-- </div> -->
+                </div>
+            </div>
+            <br><br>
+            <div id="footer">
+                <div class="footheading">
+                    <p id="foottext">Questions? Contact Us.</p>
+                </div>
+                    <div class="container" id="footcont">
+                        <div class="footdiv">
+                            <span class="footsubtext">FAQ</span>
+                        </div>
+                        <div class="footdiv">
+                            <span class="footsubtext">Help Center</span>
+                        </div>
+                        <div class="footdiv">
+                            <span class="footsubtext">Jobs</span>
+                        </div>
+                    </div>
+                    <div class="container" id="footcont">
+                        <div class="footdiv">
+                            <span class="footsubtext">Privacy</span>
+                        </div>
+                        <div class="footdiv">
+                            <span class="footsubtext">Terms of Use</span>
+                        </div>
+                        <div class="footdiv">
+                            <span class="footsubtext">Only on Netflix</span>
+                        </div>
+                    </div>
+                    <div class="container" id="footcont">
+                        <div class="footdiv">
+                            <span class="footsubtext">Legal Notices</span>
+                        </div>
+                        </a><div class="footdiv">
+                            <span class="footsubtext">Cookie Preferences</span>
+                        </div>
+            </div>
+            <br>
+            <div id="langbtn">
+                <div id="heading">
+                    Language Options:
+                </div>
+                <div class="dropdown">
+                    <select>
+                        <option>English</option>
+                        <option>Hindi</option>
+                        <option>Malayalam</option>
+                    </select>
+                </div>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

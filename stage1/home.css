@@ -1,0 +1,37 @@
+#header{
+    height:55px !important ; 
+    background-color:#1b1a19 !important;
+}
+
+body {
+    background-color:#1b1a19
+}
+
+.slogo{
+    height:29px;
+    width: 70px;
+}
+
+
+.slideImg{
+    height:350px;
+    width:100%
+}
+
+.slideImgContent{
+    height:100% !important;
+    width:100% !important
+}
+
+#sections {
+    height:1400px !important;
+    width:100% !important;
+    border:2px solid hotpink !important; ;
+}
+
+.subsection {
+    margin-top: 5%;
+    height:200px !important;
+    width:100% !important;
+    border:2px solid orange !important; ;
+}

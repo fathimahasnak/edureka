@@ -1,0 +1,42 @@
+db.genre.insert([
+    {
+        "genre_id":100,
+        "genre_name":"Thriller"
+    },
+    {
+        "genre_id":101,
+        "genre_name":"Sci-fi"
+    },
+    {
+        "genre_id":102,
+        "genre_name":"Musical"
+    },
+    {
+        "genre_id":103,
+        "genre_name":"Documentary"
+    },
+    {
+        "genre_id":104,
+        "genre_name":"Period Drama"
+    },
+    {
+        "genre_id":105,
+        "genre_name":"BL"
+    },
+    {
+        "genre_id":106,
+        "genre_name":"Anime"
+    },
+    {
+        "genre_id":107,
+        "genre_name":"Comedy"
+    },
+    {
+        "genre_id":108,
+        "genre_name":"Action & Adventure"
+    },
+    {
+        "genre_id":109,
+        "genre_name":"Romance"
+    },
+])

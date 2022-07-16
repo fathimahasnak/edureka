@@ -1,0 +1,151 @@
+db.itemData.insert([ 
+    { 
+        "showtype_id":1, 
+        "showtype_category":"series",     
+        "thumbnail": "https://b.zmtcdn.com/data/pictures/chains/3/143/c77dfea619f2d7786a7d054afab5cd88_featured_v2.jpg",
+        "gerne": [ 
+        { 
+            "genre_id":100,
+            "genre_name":"Thriller"
+  
+        }, 
+        {
+            "genre_id":105,
+            "genre_name":"BL"
+        },
+        {
+            "genre_id":106,
+            "genre_name":"Anime" 
+        } 
+      ], 
+      "Language": [ 
+        { 
+          "Language_id": 1, 
+          "Language_name": "English" 
+        }, 
+        { 
+          "Language_id": 2, 
+          "Language_name": "Japanese" 
+        }, 
+        { 
+          "Language_id": 1, 
+          "Language_name": "Thai" 
+        }
+      ], 
+      "image_gallery": [ 
+        "https://m.media-amazon.com/images/I/41zV9p-+D0L._AC_SY450_.jpg", 
+        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTAzMjAwNzc1MzVeQTJeQWpwZ15BbWU4MDQzODgzMjEx._V1_SX300.jpg", 
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRefbVlPdUQNcy5HDrf6qWj3a9gaqgkdScN9kNorb2gdNE4rePoJZGHTijd&s=10", 
+        "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRF7SMKgaymhUXYzAJ_B-N7B0SQrOTfCbwCsQpdg_0kymR-2DaS" 
+      ] 
+    },
+    {
+        "showtype_id":2, 
+        "showtype_category":"movie",     
+        "thumbnail": "https://b.zmtcdn.com/data/pictures/chains/3/143/c77dfea619f2d7786a7d054afab5cd88_featured_v2.jpg",
+        "gerne": [ 
+        {
+            "genre_id":100,
+            "genre_name":"Thriller"
+        },
+        {
+            "genre_id":101,
+            "genre_name":"Sci-fi"
+        },
+        {
+            "genre_id":106,
+            "genre_name":"Anime" 
+        },
+        {
+            "genre_id":107,
+            "genre_name":"Comedy"
+        },
+        {
+            "genre_id":108,
+            "genre_name":"Action & Adventure"
+        }
+      ], 
+      "Language": [ 
+        { 
+          "Language_id": 1, 
+          "Language_name": "English" 
+        }, 
+        { 
+          "Language_id": 2, 
+          "Language_name": "Japanese" 
+        }
+      ], 
+      "image_gallery": [ 
+        "https://m.media-amazon.com/images/I/41zV9p-+D0L._AC_SY450_.jpg", 
+        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTAzMjAwNzc1MzVeQTJeQWpwZ15BbWU4MDQzODgzMjEx._V1_SX300.jpg", 
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRefbVlPdUQNcy5HDrf6qWj3a9gaqgkdScN9kNorb2gdNE4rePoJZGHTijd&s=10", 
+        "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRF7SMKgaymhUXYzAJ_B-N7B0SQrOTfCbwCsQpdg_0kymR-2DaS" 
+      ] 
+    },
+    {
+        "showtype_id":3, 
+        "showtype_category":"sit-com",    
+        "thumbnail":"https://b.zmtcdn.com/data/pictures/chains/3/143/c77dfea619f2d7786a7d054afab5cd88_featured_v2.jpg",
+        "gerne": [ 
+        {
+            "genre_id":107,
+            "genre_name":"Comedy"
+        }
+        ], 
+        "Language": [ 
+        { 
+          "Language_id": 1, 
+          "Language_name": "English" 
+        }
+      ], 
+      "image_gallery": [ 
+        "https://m.media-amazon.com/images/I/41zV9p-+D0L._AC_SY450_.jpg" 
+      ]
+    },
+    {
+        "showtype_id":4, 
+        "showtype_category":"documentary ",    
+        "thumbnail":"https://b.zmtcdn.com/data/pictures/chains/3/143/c77dfea619f2d7786a7d054afab5cd88_featured_v2.jpg",
+        "gerne": [ 
+        {
+            "genre_id":102,
+            "genre_name":"Musical"
+        },
+        {
+            "genre_id":103,
+            "genre_name":"Documentary"
+        }
+       ], 
+      "Languge": [ 
+        { 
+            "Language_id": 1, 
+            "Language_name": "English" 
+        }
+      ], 
+      "image_gallery": [ 
+        "https://m.media-amazon.com/images/I/41zV9p-+D0L._AC_SY450_.jpg", 
+        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTAzMjAwNzc1MzVeQTJeQWpwZ15BbWU4MDQzODgzMjEx._V1_SX300.jpg", 
+      ]
+    },
+    {
+        "showtype_id":5, 
+        "showtype_category":"play",    
+        "thumbnail":"https://b.zmtcdn.com/data/pictures/chains/3/143/c77dfea619f2d7786a7d054afab5cd88_featured_v2.jpg",
+        "gerne": [ 
+        {
+            "genre_id":104,
+            "genre_name":"Period Drama"
+        }
+       ], 
+       "Languge": [ 
+        { 
+          "Language_id": 1, 
+          "Language_name": "English" 
+        }
+       ], 
+       "image_gallery": [ 
+        "https://m.media-amazon.com/images/I/41zV9p-+D0L._AC_SY450_.jpg" 
+       ]
+    }
+])
+ 

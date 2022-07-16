@@ -1,0 +1,22 @@
+db.showType.insert([
+       {
+              "showtype_id":1,
+              "showtype_category":"series"
+       },
+       {
+              "showtype_id":2,
+              "showtype_category":"movie"
+       },
+       {
+              "showtype_id":3,
+              "showtype_category":"sitcom"
+       },
+       {
+              "showtype_id":4,
+              "showtype_category":"documentary"
+       },
+       {
+              "showtype_id":5,
+              "showtype_category":"play"
+       }
+   ])

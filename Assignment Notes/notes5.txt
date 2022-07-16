@@ -1,0 +1,38 @@
+Steps: Open VS code terminal
+1. npm init
+2. npm install express body-parser nodemon --save
+3. app.js => change script in package.json => "start": "nodemon app.js"
+4. Create folders - Routes, Controllers, Models
+5. MVC-R Architecture
+
+Example - Ordering food in restaurant
+1. Model -
+    -> Data, on which we will be performing some task
+    -> chef - cooks the food and passes back to the controller
+2. Controller - 
+    -> Method/Function to perform the task
+    -> waiter - who will pass the request of customer to the chef
+3. Routes -
+    -> path 
+    -> customer - requests for menu to the waiter
+4. View -
+    -> Menu card
+
+Example - shopping cart 
+    -> The items are displayed on screen 
+    -> User selects an item and clicks on Add to Cart button 
+    -> That item is stored under the cart.
+        1. 1st Model - items details , 2nd model - output model -> store the selected item
+        2. Controller - Method for Add to cart button
+        3. Router - access / call the controller for Add to Cart
+        4. View - display list of items in cart
+
+6. Solve Q1 and Q2
+7. MongoDB -
+    > open mongodb.com
+    > Install mongodb
+    > open shell
+    > mongod > mongo
+    > install mongoose --save
+    > mongodb connection in app.js
+    > create model schema in models folder for Mealtype.json
